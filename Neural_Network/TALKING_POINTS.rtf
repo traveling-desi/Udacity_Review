@@ -1,0 +1,154 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red35\green46\blue57;\red255\green255\blue255;\red70\green81\blue90;
+\red21\green163\blue221;\red70\green81\blue90;\red249\green250\blue251;\red249\green250\blue251;\red0\green0\blue0;
+\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;\cssrgb\c18039\c23922\c28627;\cssrgb\c100000\c100000\c100000;\cssrgb\c34510\c39216\c42745;
+\cssrgb\c784\c70196\c89412;\cssrgb\c34510\c39216\c42745;\cssrgb\c98039\c98431\c98824;\cssrgb\c98039\c98431\c98824;\cssrgb\c0\c0\c0;
+\csgray\c100000;}
+\margl1440\margr1440\vieww15900\viewh8500\viewkind0
+\deftab720
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+All the code in the notebook runs in Python 3 without failing, and all unit tests pass.\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0 \cf4 Yes. All are passing.\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf2 The sigmoid activation function is implemented correctly\
+\
+\pard\pardeftab720\sl400\sa300\partightenfactor0
+
+\b0 \cf4 Well done. Correctly done. Sigmoid adds the non-linearity in our network.\
+\pard\pardeftab720\sl400\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Sigmoid_function"}}{\fldrslt \cf5 https://en.wikipedia.org/wiki/Sigmoid_function}}\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf6 \cb7 \outl0\strokewidth0 \strokec6 The forward pass is correctly implemented for the network's training.\cf4 \cb3 \outl0\strokewidth0 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\b0 \cf4 \
+* Good job using numpy to succinctly multiply two matrices with a single command. Your answer is correct and works for this project but you may look into adding a bias term to give you more flexibility at each node of the neural network.\
+\
+* Here is an explanation for why a bias term is useful:\
+http://stats.stackexchange.com/questions/185911/why-are-bias-nodes-used-in-neural-networks\
+\
+* At a very high level, it is the difference between y = mx and y = mx + c (where c is the bias term). The first equation can only describe data where (0, 0) is part of the dataset, while the second equation has no such restriction. Typically in a neural network, the second equation becomes of the form y = w1x + w0b (where b is the bias term, which can be turned on and off by appropriate weight on w0)\
+\
+Bonus material (optional):\
+In practice, this is implemented by increasing the input vector at each layer by one more data point (which is really hard coded to 1) and adding one more row/column to the weight matrix. Here is a slide from Andrew Ng's lecture explaining this (where the x0 are the bias terms and \uc0\u1012 j0 are the new weight terms)\
+\
+![image](https://udacity-github-sync-content.s3.amazonaws.com/_attachments/44782/1485658284/Screen_Shot_2017-01-28_at_6.50.18_PM.png)\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf2 \
+\pard\pardeftab720\sl400\sa300\partightenfactor0
+
+\b0 \cf4 * Sigmoid functions add the non-linearity in our network. Why do we need non-linearity anyway?\
+\pard\pardeftab720\sl400\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/a/9783865"}}{\fldrslt \cf5 http://stackoverflow.com/a/9783865}}\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf6 \cb7 \outl0\strokewidth0 \strokec6 The run method correctly produces the desired regression output for the neural network.\cf2 \cb3 \outl0\strokewidth0 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0 \cf4 Since we are using the NN for regression we use the identity activation function at the output.\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf6 \cb7 \outl0\strokewidth0 \strokec6 The network correctly implements the backward pass for each batch, correctly updating the weight change.
+\b0 \cf4 \cb3 \outl0\strokewidth0 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \
+\pard\pardeftab720\sl400\sa300\partightenfactor0
+\cf4 * These are the errors between the expected values in the data and the actual values that the Neural network outputs and will be used to tune the weights in the network. Good job!\
+* Here is a great explanation about the back-propagation algorithm that I found helpful to get some intuition. Please read it at your leisure and don't worry if you don't understand it completely. As the author says you get finer appreciation for the algorithm over many days and weeks :)\
+\pard\pardeftab720\sl400\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://neuralnetworksanddeeplearning.com/chap2.html"}}{\fldrslt \cf2 http://neuralnetworksanddeeplearning.com/chap2.html}}\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf6 \cb7 \outl0\strokewidth0 \strokec6 Updates to both the input-to-hidden and hidden-to-output weights are implemented correctly.
+\b0 \cf4 \cb3 \outl0\strokewidth0 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf4 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf2 \cb8 \
+\pard\pardeftab720\sl400\sa300\partightenfactor0
+
+\b0 \cf9 \cb10 * Good Job. Weight update  was a really tricky part and you got it right. This is the heart of the back-propagation (and understanding neural networks) and you got it right. Yay!\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf9 * Also pay attention to the particular way of training. We find the weight changes for the entire batch and then do the actual weight update after the batch is done using the average value (as opposed to updating the weights after back-propagating each error term)\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf2 \cb3 The number of epochs is chosen such the network is trained well enough to accurately make predictions but is not overfitting to the training data.\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0 \cf9 \cb10 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf9 \
+\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf2 \cb8 The number of hidden units is chosen such that the network is able to accurately predict the number of bike riders, is able to generalize, and is not overfitting.
+\b0 \cf9 \cb10 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf9 \
+\pard\pardeftab720\sl400\sa300\partightenfactor0
+\cf4 \cb8 * The number of nodes is fairly open; if validation loss is low, it should meet specifications. It should probably be no more than twice the number of input units, and enough that the network can generalize, so probably at least 8. A good rule of thumb is the half way in between the number of input and output units.\
+* There's a good answer here for how to decide the number of nodes in the hidden layer.\'a0{\field{\*\fldinst{HYPERLINK "https://www.quora.com/How-do-I-decide-the-number-of-nodes-in-a-hidden-layer-of-a-neural-network"}}{\fldrslt \cf5 https://www.quora.com/How-do-I-decide-the-number-of-nodes-in-a-hidden-layer-of-a-neural-network}}\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf4 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf9 \cb10 \
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b \cf2 \cb8 The learning rate is chosen such that the network successfully converges, but is still time efficient.
+\b0 \cf9 \cb10 \
+\pard\pardeftab720\sl400\partightenfactor0
+\cf9 \
+\
+* Choosing a good learning rate is as much an art as science.\
+* Sometimes, the network doesn't converge when the learning rate is too high. The weight update steps are too large with this learning rate and the weights end up not converging.\
+* On the other hand, we should be using learning rates that are just low enough to get the network to converge, there really isn't a benefit in a really low learning rate. \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf4 \cb3 \
+\
+\
+*************************************************\
+\
+Excellent submission. It is obvious that you understand this material well now. :raised_hands:\
+\
+\
+Neural networks are hard to understand but, are one of the most powerful tools in a Machine Learning engineers toolbox. You are well on your way in understanding this tool well.}
