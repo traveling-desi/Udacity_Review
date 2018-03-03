@@ -1,0 +1,392 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 AppleSymbols;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red249\green250\blue251;\red0\green0\blue0;
+\red255\green255\blue255;\red70\green81\blue90;\red27\green31\blue34;}
+{\*\expandedcolortbl;\csgray\c100000;\csgenericrgb\c0\c0\c0;\cssrgb\c98039\c98431\c98824;\cssrgb\c0\c0\c0;
+\csgray\c100000;\cssrgb\c34510\c39216\c42745;\cssrgb\c14118\c16078\c18039;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww15640\viewh10460\viewkind0
+\deftab720
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0\b\fs36 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sl400\partightenfactor0
+\cf4 \cb5 Student provides a thorough discussion of the driving agent as it interacts with the environment.
+\f1 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0\b0\fs28 \cf6 \cb3 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 The rewards are generated and applied to the agent in the `Envionment.py`. You can find all the scenarios that result in rewards discussed [here](
+\f2\fs24 \cf7 \cb5 https://github.com/udacity/machine-learning/blob/48178d734ba9e97291498b5ebc57639a71f6548c/projects/smartcab/smartcab/environment.py#L262-L397)
+\f0\fs28 \cf2 \cb3 \
+\
+For just the rewards with no action taken see [here](
+\f2\fs24 \cf7 \cb5 https://github.com/udacity/machine-learning/blob/48178d734ba9e97291498b5ebc57639a71f6548c/projects/smartcab/smartcab/environment.py#L328-L331)
+\f0\b\fs36 \cf2 \cb3 \
+\
+
+\b0\fs28 \'97
+\b\fs36 \
+\
+
+\b0\fs28 Well done. Indeed the rewards are calculated and provided by the environment. So if the agent does nothing it will still get rewarded when the environment thinks it is the correct thing to do. 
+\b\fs36 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \cb5 \
+Student correctly addresses the questions posed about the code as addressed in Question 2 of the notebook.\cb3 \
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 * In the agent.py Python file, choose three flags that can be set and explain how they change the simulation. :x:\
+* In the environment.py Python file, what Environment class function is called when an agent performs an action? :white_check_mark:\
+* In the simulator.py Python file, what is the difference between the 'render_text()' function and the 'render()' function? :white_check_mark:\
+* In the planner.py Python file, will the 'next_waypoint() function consider the North-South or East-West direction first? :white_check_mark:\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \cb5 Driving agent produces a valid action when an action is required. Rewards and penalties are received in the simulation by the driving agent in accordance with the action taken.\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \cb3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 The answer should be of the form (there are many ways to meet this in the code) :\
+![Screen Shot 2018-01-09 at 4.24.54 PM.png](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/44782/1515543918/Screen_Shot_2018-01-09_at_4.24.54_PM.png)\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \cb5 Student summarizes observations about the basic driving agent and its behavior. Optionally, if a visualization is included, analysis is conducted on the results provided.\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \cb3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 You should run the again with the learning disabled (i.e taking random actions) and plot the `sim_no-learning_1.csv`\
+\
+The output should look like this:\
+![Screen Shot 2018-01-09 at 4.35.11 PM.png](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/44782/1515544553/Screen_Shot_2018-01-09_at_4.35.11_PM.png)\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 Student justifies a set of features that best model each state of the driving agent in the environment. Unnecessary features not included in the state (if applicable) are similarly justified. Students argument in notebook (Q4) must match state in agent.py code.
+\fs28 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0 \cf2 \
+\
+# Required\
+\
+A few things to keep in mind:\
+1. The reward system follows the U.S driving laws.\
+1. There are no U-turns allowed in our world of the smartcab\
+\
+Keeping these in mind can you check if all of these state variables are required or can some of them be dropped?\
+\
+1. waypoint, \
+1. light, \
+1. oncoming, \
+1. right, \
+1. left \
+\
+Let me make it easy for you. One of the above is redundant (i.e any car coming from that direction cannot interfere with an agent that is following the rules. or to put it simply it would not matter if you removed that state variable, the agent can still learn the rules without any issues.)\
+\
+So which of the above state variables do you think should be removed?\
+\
+\
+\
+\'97\'97\
+\
+# Required\
+* So the agent on the `right` will never interfere with our agent provided:\
+  * There are no U-Turns\
+  * Our agent is following the traffic laws.\
+\
+Think about it. If our agent has the green light then it has the right of way and we don't need to worry about the car on the right. What about when our agent has the red light? The only lawful action our agent can take on a red light is to make a right. In that case, as long as the car on the right is not making a U-turn (which we said is not allowed) it cannot interfere with our agent.\
+\
+So the car on the right is redundant. We need all the other cars/agents. So please drop the inputs['right']. This will reduce your state space by a factor of 4 and you should be able to train your agent in much fewer training trials (since there are fewer states)\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 \cb5 The total number of possible states is correctly reported. The student discusses whether the driving agent could learn a feasible policy within a reasonable number of trials for the given state space.
+\b0 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\fs28 \cf2 \cb3 If your state space is: `(waypoint, inputs['light'], inputs['left'], inputs['right'], inputs['oncoming\'92])\
+\
+The size of the state space should be  3
+\f3 \uc0\u8727 
+\f0 4
+\f3 \uc0\u8727 
+\f0 4
+\f3 \uc0\u8727 
+\f0 4
+\f3 \uc0\u8727 
+\f0 2=384 .\
+\
+If your state space is: `(waypoint, inputs['light'], inputs['left'], inputs['oncoming\'92])\
+\
+The size of the state space should be  3
+\f3 \uc0\u8727 
+\f0 4
+\f3 \uc0\u8727 
+\f0 4
+\f3 \uc0\u8727 
+\f0 2=96 .\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 \
+The driving agent successfully updates its state based on the state definition and input provided.\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 It should be one of:\
+`state = (waypoint, inputs['light'], inputs['left'], inputs['right'], inputs['oncoming\'92])`\
+Or\
+`state = (waypoint, inputs['light'], inputs['left'], inputs['oncoming\'92])`\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 \
+\
+\
+The driving agent: (1) Chooses best available action from the set of Q-values for a given state. (2) Implements a 'tie-breaker' between best actions correctly (3)Updates a mapping of Q-values for a given state correctly while considering the learning rate and the reward or penalty received. (4) Implements exploration with epsilon probability (5) implements are required 'learning' flags correctly.\
+  \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 (1) Chooses best available action from the set of Q-values for a given state. :white_check_mark:\
+(2) Implements a 'tie-breaker' between best actions correctly :x:\
+(3)Updates a mapping of Q-values for a given state correctly while considering the learning rate and the reward or penalty received. :x:\
+(4) Implements exploration with epsilon probability :white_check_mark:\
+(5) implements are required 'learning' flags correctly :x:\
+\
+\
+\
+\'97\'97\
+\
+You have kept the learning to be false while creating the agent. Your agent will never learn. Please correct that!\
+\
+`agent = env.create_agent(LearningAgent,learning = False, alpha = 0.2)`\
+\
+\
+However, your `choose_action()` and `learn()` are correct!\
+\
+\
+-\'97\
+\
+Also, please set the values for alpha and epsilon explicitly and not just depend on the default values in the arguments of the function definition. The reader should not need to look @ the function definition to figure out if what values are you using in the simulation. This is a general best practice when you are coding in any setting (not just here) i.e be explicit in your assumptions, requirements, uses, values etc.\
+\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 Student summarizes observations about the initial/default Q-Learning driving agent and its behavior, and compares them to the observations made about the basic agent. If a visualization is included, analysis is conducted on the results provided.\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 The graph should be something like this:\
+![Screen Shot 2018-01-09 at 5.06.48 PM.png](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/44782/1515546422/Screen_Shot_2018-01-09_at_5.06.48_PM.png)\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 Very good. The trend of the graph is very encouraging. When you see a graph like this but the results are still not good enough you know that it may just be a matter of how many trials you are giving the agent to learn. Sometimes increasing the number of trials may improve the results.\
+\
+\
+Your answers are spot on!
+\b\fs36 \
+\
+\
+\pard\pardeftab720\sl280\sa300\partightenfactor0
+
+\f1\b0\fs24 \cf4 \cb5 \
+\pard\pardeftab720\sl400\partightenfactor0
+
+\b\fs36 \cf4 The driving agent performs Q-Learning with alternative parameters or schemes beyond the initial/default implementation.\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf4 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0\b0\fs28 \cf6 \cb3 The graph should be something like this:\
+\
+![Screen Shot 2018-01-09 at 5.11.53 PM.png](https://udacity-reviews-uploads.s3.us-west-2.amazonaws.com/_attachments/44782/1515546731/Screen_Shot_2018-01-09_at_5.11.53_PM.png)\
+\
+\
+\'97\'97\'97\
+\
+The 'a' in the equation is not alpha. It is a different constant. Alpha and Epsilon are different parameters that control different features in the simulation. By tying them together you end up constraining the values of alpha to unrealistic levels and that is not the correct thing to do.\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 \
+Student summarizes observations about the optimized Q-Learning driving agent and its behavior, and further compares them to the observations made about the initial/default Q-Learning driving agent. If a visualization is included, analysis is conducted on the results provided.\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 Excellent\
+\
+Yes. That's a great improvement and an amazing testament to the Q-learning algorithm, which even if being a pretty simple equation results in an actual self-learning agent. I want to point out something:\
+\
+As you have already noticed, it does not take too many training trials for the agent to start converging on the optimal policy i.e within a few trials it starts behaving "rightish". However to get the exact optimal policy you need to have an infinite number of trials. And so there will always be some probability that for some state the agent still does not know the optimal action.\
+\
+\
+\'97\'97\'97\
+\
+\
+This is great but when you have a value of alpha close to zero i.e you are ignoring most of the immediate rewards it is hard to call this agent a learning agent when the learning rate is close to zero. And the only reason it is close to zero is that you have tied alpha and epsilon together in the epsilon delay equation when you did not need to. Because alpha is close to zero you will find that most of the Q-values are actually close to zero as well and hence very susceptible to noise. Your agent works well in a deterministic and controlled environment like this experiment but will not do well in a stochastic and noisy environment. You should rectify this.\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf6 Did I convince you?\
+\
+\
+\'97\'97\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \
+\
+This is great but when you have a value of alpha close to one i.e you are ignoring most of the learnings you have done and concentrate only on the immediate rewards it is hard to call this agent a learning agent when all it does is respond to immediate stimulus. And the only reason it is close to one is that you have tied alpha and epsilon together in the epsilon delay equation when you did not need to. Because alpha is close to one you will find that most of the Q-values get thrown out and your Q-values actually converge to the value of the immediate rewards. If this is the case why do epsilon exploration. You may as well step through each state/action pair one by one and get the award for it and update your Q-value. Your agent works well in a deterministic and controlled environment like this experiment but will not do well in a stochastic and noisy environment. You should rectify this.\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf6 Did I convince you?\cf2 \
+\
+\
+\'97\'97\
+\
+\
+In general alpha values close to 1 or close 0 are problematic. We want a learning agent. What that means is an agent open to learning from the environment while also using the past learnings it has done and being able to adjust the weight it gives to either of these. When you are ignorant and have nothing to lose you are open to new experiences. But when you have picked up knowledge you do not want to throw it away fast.\
+\
+\'97\'97\
+\
+\
+\
+The reason you need the function to be monotonically decreasing is that there are two distinct states for the learning experience:  exploration and exploitation. Just like humans when you know nothing you explore more but when you already know a lot through experience you stop exploring and start exploiting. Does what I said make sense so far?\
+\
+Then now you should justify why suddenly increasing exploration is the right thing to do. Why when you already have learned through experience would you suddenly start taking random actions again? You can use two models:\
+  * Keep exploring through a model and encounter every possible state/action pair you can ever in real life and learn what responses you get from the environment. This is the approach that Tesla has taken their self-driving cars.\
+  * Explore a lot initially (i.e take actions that do not make sense given that Q-values at THAT time) but slowly take over the exploitation so that the actions you take are the max Q-values. This is the approach Waymo and Ford/GM have taken.\
+\
+There is no car company that has done what you have done in your graph. So with that background NOW you need to justify why your approach is better. And it's not like the equation is any simpler. You have actually used an extremely complex equation to do something that does not make sense. So now it's your turn to justify why your approach makes sense.\
+\
+\
+# Required\
+* Instead of 10 testing trials run your agent for 100 or 200 testing trials. What results do you get? Are you still getting A+? Can you tell me why you are getting the results you are getting now?\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 Student describes what an optimal policy for the driving agent would be for the given environment. The policy of the improved Q- Learning driving agent is compared to the stated optimal policy. Student presents entries from the learned Q-table that demonstrate the optimal policy and sub- optimal policies. If either are missing, discussion is made as to why.\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 \cb5 The optimal policy can be described as:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\'95	}Agent \expnd0\expndtw0\kerning0
+cannot cause accident (this is inferred and not actually coded)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Agent should follow the waypoint so that it moves towards the destination.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+When the oncoming car wants to go right or forward, the agent cannot turn left. But in ALL OTHER CASES if the light is green, the car has the right of way, regardless the movements of the left, right and oncoming cars.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+When the light is red, the car can only stop or turn right. Under this situation (light is red), if the car to the left wants to go forward, the agent cannot turn right.\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \
+\
+\'97\'97\
+\
+If the light is red, stop! However, if the waypoint is right and there is no traffic from the left going forward then the agent can go right.\
+If the light is green and the waypoint is left the agent can make a left only if oncoming makes a left or is None else agent should idle. All movements in other directions are freely allowed on green.\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \cb3 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \cb5 Did I get this right or did I miss something? Optimal policy is learned through the reward which you can find [here](https://github.com/udacity/machine-learning/blob/48178d734ba9e97291498b5ebc57639a71f6548c/projects/smartcab/smartcab/environment.py#L294-L331\
+)\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 \cb3 \
+\
+\'97\'97\
+\
+You can think of optimal policy in two ways.  For every state in your Q-table there is one action that has the max Q-value. These state/action pairs with max Q value form the optimal policy i.e what action the agent will take in every state.\
+\
+You also have an idea of what the optimal policy should be based on the traffic laws. Let's call this the "true" optimal policy, The question is asking you about this "True" optimal policy. You need to tell us what action is valid in EVERY state. Of course, since many actions end up being the same in many states that we can combine them.\
+\
+So you can easily write optimal policy in two sentences\
+\
+```\
+If red light and the agent ,.... and car on left .....then ... else ......\
+If green light and the agent ..... and oncoming ..... then .... else.....\
+```\
+\
+\
+\'97\'97\
+\
+* First I don't know what is "right of way". It is not technically precise. I only know 4 actions "None, Forwards, left, right". You need to tell me what action you need to take. Don't tell me "right of way" or "yield to oncoming traffic" etc.\
+* Second you found that you have 96 states. The optimal policy is the best action to take in EACH of the 96 states. So you can either create a table with 96 rows and tell me what is the best action or as in boolean logic tables many features share conditions and hence you can combine rows. In fact, as I just showed you before it is possible to write the optimal policy in just two English sentences that is both precise and complete.\
+\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b\fs36 \cf2 Student correctly identifies the two characteristics about the project that invalidate the use of future rewards in the Q-Learning implementation.
+\b0\fs28 \
+\
+\
+In any case, this is an optional point. I am giving you "requires changes" only because you have to make changes in other parts of your notebook. I will not hold up the submission just on account of this. So please think a little harder about this.\
+\
+\
+\'97\'97\'97\
+\
+\
+Here is my take on it:\
+\
+The whole idea of Gamma is to signal the agent which actions it takes NOW will lead to large rewards in the future i.e Gamma is the parameter that makes the utility of some neighboring states more than others (hence determining the action of the agent) since these states are closer to the terminal high reward state.\
+\
+**Reason due to the Agent:**\
+* The agent is just following directions that it is being given and it gets rewarded for following the directions while following the traffic laws. If you look at the code you will realize the agent doesn't need to know where it is going, in fact the agent does not even know when it has reached the destination. All that is handled externally. If this is the case, how can anyone argue that we should reward the agent for making efficient choices (and hence gamma is meaningless.)\
+\
+**Reason due to Environment:**\
+* The high reward terminal state (i.e the destination) changes in every trial. The stating location of our agent also changes in every trial.  Thus even if the agent actually somehow figured out which block on the grid was closer to the destination, that information would be useless in the next trial.\
+\
+* Now, if the agent had a map of the grid in it's memory, and, it could find out all the multiple paths that it could take from where it was to it's intended destination, and, could potentially choose multiple paths without having prior knowledge of which paths were more efficient, then gamma would make sense. By discounting rewards for the longer paths we could make our agent more efficient.\
+\
+\
+\
+
+\b\fs36 Additional Reviewer Comments\
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\b0\fs28 \cf2 You could argue that this project was your true first step into the domain of Artificial Intelligence. Most of the previous Machine Learning algorithms needed some kind of hand-holding (supervision) or a well-defined algorithm (unsupervised) help to learn. But this was a project where the agent learned by itself after it was given a table to update values and pick actions from.\
+\
+Hope you enjoyed this project as much as I did when I first solved it. Reinforcement Learning is making a strong come back lately (guided by Google's Deep Mind) and you should be excited about the skills you have learned in this project.\
+\
+\
+If you really like Reinforcement Learning you should take the slightly more advanced FREE course at Udacity: https://classroom.udacity.com/courses/ud600/\
+\
+You can also download the book by Sutton and Barto which is widely considered the original bible of Reinforcement Learning.\
+\
+\
+\
+\'97\'97\
+\
+\
+ps: I have given you feedback only for places that you were not meeting specifications previously. You probably don't want to read feedback for rubrics you already met last time.}
